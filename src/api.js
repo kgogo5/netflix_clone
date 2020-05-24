@@ -20,27 +20,22 @@ export const PlatformsApi = {
   platformDetails: (id) => api.get(`platforms/${id}`),
 };
 
-export const CreatorsApi = {
-  creatorLists: () => api.get(`creators`),
-  creatorDetails: (id) => api.get(`creators/${id}`),
-};
-
 export const GenresApi = {
   genreLists: () => api.get(`genres`),
   genreDetails: (id) => api.get(`genres/${id}`),
 };
 
 export const TagApi = {
-  tagLists: () => api.get(`tag`),
-  tagDetails: (id) => api.get(`tag/${id}`),
+  tagLists: () => api.get(`tags`),
+  tagDetails: (id) => api.get(`tags/${id}`),
 };
 
 export const StoreApi = {
-  storeLists: () => api.get(`store`),
-  storeDetails: (id) => api.get(`store/${id}`),
+  storeLists: () => api.get(`stores`),
+  storeDetails: (id) => api.get(`stores/${id}`),
 };
 
 export const PublisherApi = {
-  publisherLists: () => api.get(`publisher`),
-  publisherDetails: (id) => api.get(`publisher/${id}`),
+  publisherLists: () => api.get(`publishers`),
+  publisherDetails: (id) => api.get(`publishers/${id}`),
 };

@@ -14,8 +14,6 @@ Learning React and ES6 by building a Movie Discovery App.
 - Game details
 - Platform lists
 - Platform details
-- Game creators
-- Game creators details
 - Genre lists
 - Genre details
 - Tag lists

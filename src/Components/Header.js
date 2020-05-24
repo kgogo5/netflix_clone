@@ -23,7 +23,8 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-  width: 50px;
+  padding: 0 10px;
+  min-width: 50px;
   border-bottom: 5px solid
     ${(props) => (props.current ? "#E50914" : "transparent")};
   transition: border-bottom 0.5s ease-in-out;
@@ -41,13 +42,25 @@ export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
       <Item current={pathname === "/"}>
-        <Slink to="/">Movies</Slink>
+        <Slink to="/">Home</Slink>
       </Item>
-      <Item current={pathname === "/tv"}>
-        <Slink to="/tv">TV</Slink>
+      <Item current={pathname === "/game"}>
+        <Slink to="/game">Game</Slink>
       </Item>
-      <Item current={pathname === "/search"}>
-        <Slink to="/search">Search</Slink>
+      <Item current={pathname === "/platform"}>
+        <Slink to="/platform">Platform</Slink>
+      </Item>
+      <Item current={pathname === "/genre"}>
+        <Slink to="/genre">Genre</Slink>
+      </Item>
+      <Item current={pathname === "/tag"}>
+        <Slink to="/tag">Tag</Slink>
+      </Item>
+      <Item current={pathname === "/publisher"}>
+        <Slink to="/publisher">Publisher</Slink>
+      </Item>
+      <Item current={pathname === "/store"}>
+        <Slink to="/store">Store</Slink>
       </Item>
     </List>
   </Header>
