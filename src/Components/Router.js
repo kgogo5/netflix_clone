@@ -14,6 +14,8 @@ import Tag from "Routes/Tag";
 import Store from "Routes/Store";
 import Publisher from "Routes/Publisher";
 import Footer from "Components/Footer";
+import Detail from "Routes/Detail";
+// 프롭을 Detail로 보내 페이지를 구성한다.
 
 export default () => (
   <Router>
@@ -27,6 +29,12 @@ export default () => (
         <Route path="/tag" exact component={Tag} />
         <Route path="/store" exact component={Store} />
         <Route path="/publisher" exact component={Publisher} />
+        <Route path="/game/:id" component={Detail} />
+        <Route path="/platform/:id" component={Detail} />
+        <Route path="/genre/:id" component={Detail} />
+        <Route path="/tag/:id" component={Detail} />
+        <Route path="/store/:id" component={Detail} />
+        <Route path="/publisher/:id" component={Detail} />
         <Redirect from="*" to="/" />
       </Switch>
       <Footer />
