@@ -12,7 +12,6 @@ import {
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     const {
       location: { pathname },
     } = props;
