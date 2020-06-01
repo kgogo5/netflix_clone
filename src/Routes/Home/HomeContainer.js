@@ -12,64 +12,95 @@ import {
 export default class extends React.Component {
   state = {
     gameLists: null,
+    storeLists: null,
     platformLists: null,
     genreLists: null,
     tagLists: null,
-    storeLists: null,
     publisherLists: null,
     error: null,
     loading: true,
   };
 
   async componentDidMount() {
-    try {
-      const {
-        data: { results: gameLists },
-      } = await GamesApi.gameLists();
-      const {
-        data: { results: platformLists },
-      } = await PlatformsApi.platformLists();
-      const {
-        data: { results: genreLists },
-      } = await GenresApi.genreLists();
-      const {
-        data: { results: tagLists },
-      } = await TagApi.tagLists();
-      const {
-        data: { results: storeLists },
-      } = await StoreApi.storeLists();
-      const {
-        data: { results: publisherLists },
-      } = await PublisherApi.publisherLists();
-      this.setState({
-        gameLists,
-        platformLists,
-        genreLists,
-        tagLists,
-        storeLists,
-        publisherLists,
+    const $this = this;
+    const loading = {
+      gameLists: false,
+      storeLists: false,
+      platformLists: false,
+      genreLists: false,
+      tagLists: false,
+      publisherLists: false,
+      getLoading: function () {
+        if (
+          this.gameLists *
+          this.storeLists *
+          this.platformLists *
+          this.genreLists *
+          this.tagLists *
+          this.publisherLists
+        ) {
+          $this.setState({
+            loading: false,
+          });
+        }
+      },
+    };
+    GamesApi.gameLists().then(function (res) {
+      loading.gameLists = true;
+      loading.getLoading();
+      $this.setState({
+        gameLists: res.data.results,
       });
-    } catch {
-      //작동하지 않을 때 catch부분에서 처리가 된다.
-      this.setState({
-        error: "Can't find game information.",
+    });
+
+    StoreApi.storeLists().then(function (res) {
+      loading.storeLists = true;
+      loading.getLoading();
+      $this.setState({
+        storeLists: res.data.results,
       });
-      throw Error(`Can't find game information.`);
-    } finally {
-      //끝나게 되면 작동
-      this.setState({
-        loading: false,
+    });
+
+    PlatformsApi.platformLists().then(function (res) {
+      loading.platformLists = true;
+      loading.getLoading();
+      $this.setState({
+        platformLists: res.data.results,
       });
-    }
+    });
+
+    GenresApi.genreLists().then(function (res) {
+      loading.genreLists = true;
+      loading.getLoading();
+      $this.setState({
+        genreLists: res.data.results,
+      });
+    });
+
+    TagApi.tagLists().then(function (res) {
+      loading.tagLists = true;
+      loading.getLoading();
+      $this.setState({
+        tagLists: res.data.results,
+      });
+    });
+
+    PublisherApi.publisherLists().then(function (res) {
+      loading.publisherLists = true;
+      loading.getLoading();
+      $this.setState({
+        publisherLists: res.data.results,
+      });
+    });
   }
 
   render() {
     const {
       gameLists,
+      storeLists,
       platformLists,
       genreLists,
       tagLists,
-      storeLists,
       publisherLists,
       error,
       loading,
@@ -78,10 +109,10 @@ export default class extends React.Component {
     return (
       <HomePresenter
         gameLists={gameLists}
+        storeLists={storeLists}
         platformLists={platformLists}
         genreLists={genreLists}
         tagLists={tagLists}
-        storeLists={storeLists}
         publisherLists={publisherLists}
         error={error}
         loading={loading}

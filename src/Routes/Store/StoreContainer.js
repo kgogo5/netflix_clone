@@ -22,7 +22,6 @@ export default class extends React.Component {
       this.setState({
         error: "Can't find store information.",
       });
-      throw Error(`Can't find store information.`);
     } finally {
       //끝나게 되면 작동
       this.setState({

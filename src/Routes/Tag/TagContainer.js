@@ -1,5 +1,5 @@
 import React from "react";
-import TagPresenter from "TagPresenter";
+import TagPresenter from "./TagPresenter";
 import { TagApi } from "api";
 
 export default class extends React.Component {
@@ -21,7 +21,6 @@ export default class extends React.Component {
       this.setState({
         error: "Can't find tag information.",
       });
-      throw Error(`Can't find tag information.`);
     } finally {
       this.setState({
         loading: false,

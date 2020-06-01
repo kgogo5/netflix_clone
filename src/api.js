@@ -15,6 +15,11 @@ export const GamesApi = {
   gameDetails: (id) => api.get(`games/${id}`),
 };
 
+export const StoreApi = {
+  storeLists: () => api.get(`stores`),
+  storeDetails: (id) => api.get(`stores/${id}`),
+};
+
 export const PlatformsApi = {
   platformLists: () => api.get(`platforms`),
   platformDetails: (id) => api.get(`platforms/${id}`),
@@ -28,11 +33,6 @@ export const GenresApi = {
 export const TagApi = {
   tagLists: () => api.get(`tags`),
   tagDetails: (id) => api.get(`tags/${id}`),
-};
-
-export const StoreApi = {
-  storeLists: () => api.get(`stores`),
-  storeDetails: (id) => api.get(`stores/${id}`),
 };
 
 export const PublisherApi = {

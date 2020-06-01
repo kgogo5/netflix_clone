@@ -21,7 +21,6 @@ export default class extends React.Component {
       this.setState({
         error: "Can't find platform information.",
       });
-      throw Error(`Can't find platform information.`);
     } finally {
       this.setState({
         loading: false,

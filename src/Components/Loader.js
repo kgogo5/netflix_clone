@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
 `;
 
 const Loading = styled.div`
@@ -152,8 +155,8 @@ export default () => (
   <Container>
     <span role="img" aria-label="loading">
       <Loading>
-        <div class="loadingio-spinner-spin-ctyecxw45y8">
-          <div class="ldio-hj2sonzul3g">
+        <div className="loadingio-spinner-spin-ctyecxw45y8">
+          <div className="ldio-hj2sonzul3g">
             <div>
               <div></div>
             </div>

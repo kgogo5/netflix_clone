@@ -20,7 +20,7 @@ const Grid = styled.div`
 
   & ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-columns: repeat(auto-fill, 240px);
     grid-gap: 15px;
   }
 
@@ -36,7 +36,7 @@ const Grid = styled.div`
   .imgBox {
     display: block;
     width: 100%;
-    min-height: 110px;
+    min-height: 132px;
     position: relative;
     overflow: hidden;
 
@@ -45,7 +45,7 @@ const Grid = styled.div`
       position: absolute;
       top: 50%;
       left: 50%;
-      margin-top: -56px;
+      margin-top: -66px;
       margin-left: -50%;
     }
   }

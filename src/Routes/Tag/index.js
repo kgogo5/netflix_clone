@@ -1,1 +1,3 @@
-export default () => "Tag";
+import Tag from "./TagContainer";
+
+export default Tag;

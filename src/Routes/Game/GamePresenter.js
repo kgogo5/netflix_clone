@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
 import Loader from "Components/Loader";
+import Message from "Components/Message";
 
 const Container = styled.div``;
 
@@ -15,10 +16,13 @@ const GamePresenter = ({ gameLists, error, loading }) =>
         <Section title="Games List">
           <ul>
             {gameLists.map((gameLists) => (
-              <li kye={gameLists.id}>
+              <li key={gameLists.id}>
                 <a href="#">
                   <span className="imgBox">
-                    <img src={gameLists.background_image} alt={gameLists} />
+                    <img
+                      src={gameLists.background_image}
+                      alt={`${gameLists} images`}
+                    />
                   </span>
                   <strong>{gameLists.name}</strong>
                 </a>
@@ -27,6 +31,7 @@ const GamePresenter = ({ gameLists, error, loading }) =>
           </ul>
         </Section>
       )}
+      {error && <Message color="#e74c3c" text={error} />}
     </Container>
   );
 

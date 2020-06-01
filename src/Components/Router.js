@@ -8,10 +8,10 @@ import {
 import Header from "Components/Header";
 import Home from "Routes/Home";
 import Game from "Routes/Game";
+import Store from "Routes/Store";
 import Platform from "Routes/Platform";
 import Genre from "Routes/Genre";
 import Tag from "Routes/Tag";
-import Store from "Routes/Store";
 import Publisher from "Routes/Publisher";
 import Footer from "Components/Footer";
 import Detail from "Routes/Detail";
@@ -24,10 +24,10 @@ export default () => (
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/game" exact component={Game} />
+        <Route path="/store" exact component={Store} />
         <Route path="/platform" exact component={Platform} />
         <Route path="/genre" exact component={Genre} />
         <Route path="/tag" exact component={Tag} />
-        <Route path="/store" exact component={Store} />
         <Route path="/publisher" exact component={Publisher} />
         <Route path="/game/:id" component={Detail} />
         <Route path="/platform/:id" component={Detail} />

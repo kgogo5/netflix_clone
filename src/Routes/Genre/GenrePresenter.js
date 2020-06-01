@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
 import Loader from "Components/Loader";
+import Message from "Components/Message";
 
 const Container = styled.div``;
 
@@ -13,9 +14,24 @@ const GenrePresenter = ({ genreLists, error, loading }) =>
     <Container>
       {genreLists && genreLists.length > 0 && (
         <Section title="Genres List">
-          {genreLists.map((genreLists) => genreLists.name)}
+          <ul>
+            {genreLists.map((genreLists) => (
+              <li key={genreLists.id}>
+                <a href="#">
+                  <span className="imgBox">
+                    <img
+                      src={genreLists.image_background}
+                      alt={`${genreLists.name} images`}
+                    />
+                  </span>
+                  <strong>{genreLists.name}</strong>
+                </a>
+              </li>
+            ))}
+          </ul>
         </Section>
       )}
+      {error && <Message color="#e74c3c" text={error} />}
     </Container>
   );
 

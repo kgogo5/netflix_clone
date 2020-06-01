@@ -47,6 +47,9 @@ export default withRouter(({ location: { pathname } }) => (
       <Item current={pathname === "/game"}>
         <Slink to="/game">Game</Slink>
       </Item>
+      <Item current={pathname === "/store"}>
+        <Slink to="/store">Store</Slink>
+      </Item>
       <Item current={pathname === "/platform"}>
         <Slink to="/platform">Platform</Slink>
       </Item>
@@ -58,9 +61,6 @@ export default withRouter(({ location: { pathname } }) => (
       </Item>
       <Item current={pathname === "/publisher"}>
         <Slink to="/publisher">Publisher</Slink>
-      </Item>
-      <Item current={pathname === "/store"}>
-        <Slink to="/store">Store</Slink>
       </Item>
     </List>
   </Header>
