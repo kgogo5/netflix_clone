@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import Loader from "Components/Loader";
 import Message from "Components/Message";
+import Poster from "Components/Poster";
 
 const Container = styled.div``;
 
@@ -16,17 +17,15 @@ const GenrePresenter = ({ genreLists, error, loading }) =>
         <Section title="Genres List">
           <ul>
             {genreLists.map((genreLists) => (
-              <li key={genreLists.id}>
-                <a href="#">
-                  <span className="imgBox">
-                    <img
-                      src={genreLists.image_background}
-                      alt={`${genreLists.name} images`}
-                    />
-                  </span>
-                  <strong>{genreLists.name}</strong>
-                </a>
-              </li>
+              <Poster
+                key={genreLists.id}
+                id={genreLists.id}
+                bgURL={genreLists.image_background}
+                name={genreLists.name}
+                released={genreLists.released}
+                metacritic={genreLists.metacritic}
+                infoURL={"genre"}
+              />
             ))}
           </ul>
         </Section>

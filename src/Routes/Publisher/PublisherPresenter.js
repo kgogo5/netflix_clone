@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import Loader from "Components/Loader";
 import Message from "Components/Message";
+import Poster from "Components/Poster";
 
 const Container = styled.div``;
 
@@ -16,17 +17,15 @@ const PublisherPresenter = ({ publisherLists, error, loading }) =>
         <Section title="Publishers List">
           <ul>
             {publisherLists.map((publisherLists) => (
-              <li key={publisherLists.id}>
-                <a href="#">
-                  <span className="imgBox">
-                    <img
-                      src={publisherLists.image_background}
-                      alt={`${publisherLists.name} images`}
-                    />
-                  </span>
-                  <strong>{publisherLists.name}</strong>
-                </a>
-              </li>
+              <Poster
+                key={publisherLists.id}
+                id={publisherLists.id}
+                bgURL={publisherLists.image_background}
+                name={publisherLists.name}
+                released={publisherLists.released}
+                metacritic={publisherLists.metacritic}
+                infoURL={"publisher"}
+              />
             ))}
           </ul>
         </Section>

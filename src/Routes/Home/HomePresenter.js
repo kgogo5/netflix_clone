@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import Loader from "Components/Loader";
 import Message from "Components/Message";
+import Poster from "Components/Poster";
 
 const Container = styled.div``;
 
@@ -26,14 +27,15 @@ const HomePresenter = ({
           <Section title="Games List">
             <ul>
               {gameLists.map((gameLists) => (
-                <li key={gameLists.id}>
-                  <a href="#">
-                    <span className="imgBox">
-                      <img src={gameLists.background_image} alt={gameLists} />
-                    </span>
-                    <strong>{gameLists.name}</strong>
-                  </a>
-                </li>
+                <Poster
+                  key={gameLists.id}
+                  id={gameLists.id}
+                  bgURL={gameLists.background_image}
+                  name={gameLists.name}
+                  released={gameLists.released}
+                  metacritic={gameLists.metacritic}
+                  infoURL={"game"}
+                />
               ))}
             </ul>
           </Section>
@@ -45,17 +47,14 @@ const HomePresenter = ({
           <Section title="Stores List">
             <ul>
               {storeLists.map((storeLists) => (
-                <li key={storeLists.id}>
-                  <a href="#">
-                    <span className="imgBox">
-                      <img
-                        src={storeLists.image_background}
-                        alt={`${storeLists.name} images`}
-                      />
-                    </span>
-                    <strong>{storeLists.name}</strong>
-                  </a>
-                </li>
+                <Poster
+                  key={storeLists.id}
+                  id={storeLists.id}
+                  bgURL={storeLists.image_background}
+                  name={storeLists.name}
+                  domain={storeLists.domain}
+                  infoURL={"store"}
+                />
               ))}
             </ul>
           </Section>
@@ -67,17 +66,13 @@ const HomePresenter = ({
           <Section title="Platforms List">
             <ul>
               {platformLists.map((platformLists) => (
-                <li key={platformLists.id}>
-                  <a href="#">
-                    <span className="imgBox">
-                      <img
-                        src={platformLists.image_background}
-                        alt={`${platformLists.name} images`}
-                      />
-                    </span>
-                    <strong>{platformLists.name}</strong>
-                  </a>
-                </li>
+                <Poster
+                  key={platformLists.id}
+                  id={platformLists.id}
+                  bgURL={platformLists.image_background}
+                  name={platformLists.name}
+                  infoURL={"platform"}
+                />
               ))}
             </ul>
           </Section>
@@ -89,17 +84,13 @@ const HomePresenter = ({
           <Section title="Genres List">
             <ul>
               {genreLists.map((genreLists) => (
-                <li key={genreLists.id}>
-                  <a href="#">
-                    <span className="imgBox">
-                      <img
-                        src={genreLists.image_background}
-                        alt={`${genreLists.name} images`}
-                      />
-                    </span>
-                    <strong>{genreLists.name}</strong>
-                  </a>
-                </li>
+                <Poster
+                  key={genreLists.id}
+                  id={genreLists.id}
+                  bgURL={genreLists.image_background}
+                  name={genreLists.name}
+                  infoURL={"genre"}
+                />
               ))}
             </ul>
           </Section>
@@ -111,17 +102,13 @@ const HomePresenter = ({
           <Section title="Tags List">
             <ul>
               {tagLists.map((tagLists) => (
-                <li key={tagLists.id}>
-                  <a href="#">
-                    <span className="imgBox">
-                      <img
-                        src={tagLists.image_background}
-                        alt={`${tagLists.name} images`}
-                      />
-                    </span>
-                    <strong>{tagLists.name}</strong>
-                  </a>
-                </li>
+                <Poster
+                  key={tagLists.id}
+                  id={tagLists.id}
+                  bgURL={tagLists.image_background}
+                  name={tagLists.name}
+                  infoURL={"tag"}
+                />
               ))}
             </ul>
           </Section>
@@ -133,17 +120,13 @@ const HomePresenter = ({
           <Section title="Publishers List">
             <ul>
               {publisherLists.map((publisherLists) => (
-                <li key={publisherLists.id}>
-                  <a href="#">
-                    <span className="imgBox">
-                      <img
-                        src={publisherLists.image_background}
-                        alt={`${publisherLists.name} images`}
-                      />
-                    </span>
-                    <strong>{publisherLists.name}</strong>
-                  </a>
-                </li>
+                <Poster
+                  key={publisherLists.id}
+                  id={publisherLists.id}
+                  bgURL={publisherLists.image_background}
+                  name={publisherLists.name}
+                  infoURL={"publisher"}
+                />
               ))}
             </ul>
           </Section>

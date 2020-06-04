@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import Loader from "Components/Loader";
 import Message from "Components/Message";
+import Poster from "Components/Poster";
 
 const Container = styled.div``;
 
@@ -16,17 +17,14 @@ const StorePresenter = ({ storeLists, error, loading }) =>
         <Section title="Stores List">
           <ul>
             {storeLists.map((storeLists) => (
-              <li key={storeLists.id}>
-                <a href="#">
-                  <span className="imgBox">
-                    <img
-                      src={storeLists.image_background}
-                      alt={`${storeLists.name} images`}
-                    />
-                  </span>
-                  <strong>{storeLists.name}</strong>
-                </a>
-              </li>
+              <Poster
+                key={storeLists.id}
+                id={storeLists.id}
+                bgURL={storeLists.image_background}
+                name={storeLists.name}
+                domain={storeLists.domain}
+                infoURL={"store"}
+              />
             ))}
           </ul>
         </Section>

@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
+  margin: 0 auto;
+  max-width: 1400px;
   padding: 10px;
   :not(:last-child) {
     margin-bottom: 50px;
@@ -10,7 +12,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.span`
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 50px;
 `;
@@ -18,47 +20,18 @@ const Title = styled.span`
 const Grid = styled.div`
   margin: 25px 0 50px;
 
-  & ul {
+  & > ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 240px);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
-  }
 
-  a {
-    padding-bottom: 10px;
-    display: block;
-    &:hover,
-    &:focus {
-      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    @media (max-width: 1042px) {
+      grid-template-columns: repeat(2, 1fr);
     }
-  }
 
-  .imgBox {
-    display: block;
-    width: 100%;
-    min-height: 132px;
-    position: relative;
-    overflow: hidden;
-
-    img {
-      min-height: 40%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -66px;
-      margin-left: -50%;
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
     }
-  }
-
-  & img {
-    display: inline-block;
-    width: 100%;
-  }
-
-  & strong {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
   }
 `;
 
