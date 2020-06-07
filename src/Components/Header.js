@@ -1,6 +1,18 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
+import Logo from "../images/logo.png";
+
+const Image = styled.img`
+  max-width: 120px;
+  margin-right: 25px;
+  vertical-align: top;
+
+  @media (max-width: 620px) {
+    max-width: 160px;
+    margin-right: 0;
+  }
+`;
 
 const Header = styled.header`
   color: white;
@@ -15,16 +27,35 @@ const Header = styled.header`
   background-color: rgba(20, 20, 20, 0.8);
   z-index: 10;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.8);
+
+  & .logo {
+    @media (max-width: 620px) {
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 620px) {
+    padding-top: 50px;
+    height: 100px;
+  }
 `;
 
 const List = styled.ul`
   display: flex;
   height: 100%;
+
+  @media (max-width: 620px) {
+    overflow: auto;
+  }
 `;
 
 const Item = styled.li`
   padding: 0 10px;
-  min-width: 50px;
   border-bottom: 5px solid
     ${(props) => (props.current ? "#E50914" : "transparent")};
   transition: border-bottom 0.5s ease-in-out;
@@ -40,6 +71,9 @@ const Slink = styled(Link)`
 
 export default withRouter(({ location: { pathname } }) => (
   <Header>
+    <Link to="/" className="logo" role="button">
+      <Image src={Logo} alt={`STEAMFLIX Logo`} />
+    </Link>
     <List>
       <Item current={pathname === "/"}>
         <Slink to="/">Home</Slink>

@@ -29,7 +29,7 @@ const Grid = styled.div`
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
       grid-template-columns: repeat(1, 1fr);
     }
   }

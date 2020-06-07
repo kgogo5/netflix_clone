@@ -12,9 +12,11 @@ import {
 export default class extends React.Component {
   constructor(props) {
     super(props);
+
     const {
       location: { pathname },
     } = props;
+
     this.state = {
       result: null,
       error: null,
@@ -35,6 +37,7 @@ export default class extends React.Component {
       },
       history: { push },
     } = this.props;
+
     const {
       isGame,
       isPlatform,
@@ -43,11 +46,14 @@ export default class extends React.Component {
       isStore,
       isPublisher,
     } = this.state;
+
     const parsedId = parseInt(id);
     if (isNaN(parsedId)) {
       return push("/");
     }
+
     let result = null; //result 초기화
+
     try {
       if (isGame) {
         ({ data: result } = await GamesApi.gameDetails(parsedId));

@@ -5,7 +5,26 @@ import styled from "styled-components";
 
 const Container = styled.div``;
 
-const Img = styled.div`
+const Image = styled.img`
+  display: inline-block;
+  width: 100%;
+  min-height: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -27%;
+  margin-left: -50%;
+  transition: 0.15s;
+
+  @media (max-width: 480px) {
+    top: 0;
+    left: 0;
+    margin: 0;
+    position: static;
+  }
+`;
+
+const Inner = styled.div`
   position: relative;
   .img_link {
     position: relative;
@@ -14,35 +33,31 @@ const Img = styled.div`
     min-height: 132px;
     overflow: hidden;
 
+    &:hover ${Image}, &:focus ${Image} {
+      transform: scale(1.1);
+    }
+    &:hover:after,
+    &:focus:after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
     @media (max-width: 1042px) {
       min-height: 198px;
     }
     @media (max-width: 768px) {
+      min-height: 160px;
+    }
+    @media (max-width: 620px) {
+      min-height: 122px;
+    }
+    @media (max-width: 480px) {
       min-height: unset;
-    }
-  }
-
-  img {
-    display: inline-block;
-    width: 100%;
-    min-height: 40%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -25%;
-    margin-left: -50%;
-    transition: 0.15s;
-
-    &:hover,
-    &:focus {
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 768px) {
-      top: 0;
-      left: 0;
-      margin: 0;
-      position: static;
     }
   }
 `;
@@ -114,9 +129,12 @@ const Poster = ({ id, bgURL, name, released, metacritic, infoURL, domain }) => (
   <Container>
     <ul>
       <ListId key={id}>
-        <Img>
+        <Inner>
           <Link to={`/${infoURL}/${id}`} className="img_link" role="button">
-            <img src={bgURL} alt={`${name} images`} />
+            <Image
+              src={bgURL ? bgURL : require("../images/no_image.png")}
+              alt={`${name} images`}
+            />
           </Link>
           <Title>
             <Link to={`/${infoURL}/${id}`} role="button">
@@ -145,7 +163,7 @@ const Poster = ({ id, bgURL, name, released, metacritic, infoURL, domain }) => (
               </a>
             ) : null}
           </Title>
-        </Img>
+        </Inner>
       </ListId>
     </ul>
   </Container>
