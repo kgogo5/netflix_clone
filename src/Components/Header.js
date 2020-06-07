@@ -14,6 +14,16 @@ const Image = styled.img`
   }
 `;
 
+const Logos = styled.div`
+  @media (max-width: 620px) {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+  }
+`;
+
 const Header = styled.header`
   color: white;
   position: fixed;
@@ -28,26 +38,18 @@ const Header = styled.header`
   z-index: 10;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.8);
 
-  & .logo {
-    @media (max-width: 620px) {
-      display: block;
-      position: absolute;
-      top: 20px;
-      left: 0;
-      text-align: center;
-      width: 100%;
-    }
-  }
-
   @media (max-width: 620px) {
     padding-top: 50px;
     height: 100px;
   }
 `;
 
-const List = styled.ul`
-  display: flex;
+const List = styled.nav`
   height: 100%;
+  ul {
+    display: flex;
+    height: 100%;
+  }
 
   @media (max-width: 620px) {
     overflow: auto;
@@ -71,31 +73,35 @@ const Slink = styled(Link)`
 
 export default withRouter(({ location: { pathname } }) => (
   <Header>
-    <Link to="/" className="logo" role="button">
-      <Image src={Logo} alt={`STEAMFLIX Logo`} />
-    </Link>
+    <Logos>
+      <Link to="/" className="logo" role="button">
+        <Image src={Logo} alt={`STEAMFLIX Logo`} />
+      </Link>
+    </Logos>
     <List>
-      <Item current={pathname === "/"}>
-        <Slink to="/">Home</Slink>
-      </Item>
-      <Item current={pathname === "/game"}>
-        <Slink to="/game">Game</Slink>
-      </Item>
-      <Item current={pathname === "/store"}>
-        <Slink to="/store">Store</Slink>
-      </Item>
-      <Item current={pathname === "/platform"}>
-        <Slink to="/platform">Platform</Slink>
-      </Item>
-      <Item current={pathname === "/genre"}>
-        <Slink to="/genre">Genre</Slink>
-      </Item>
-      <Item current={pathname === "/tag"}>
-        <Slink to="/tag">Tag</Slink>
-      </Item>
-      <Item current={pathname === "/publisher"}>
-        <Slink to="/publisher">Publisher</Slink>
-      </Item>
+      <ul>
+        <Item current={pathname === "/"}>
+          <Slink to="/">Home</Slink>
+        </Item>
+        <Item current={pathname === "/game"}>
+          <Slink to="/game">Game</Slink>
+        </Item>
+        <Item current={pathname === "/store"}>
+          <Slink to="/store">Store</Slink>
+        </Item>
+        <Item current={pathname === "/platform"}>
+          <Slink to="/platform">Platform</Slink>
+        </Item>
+        <Item current={pathname === "/genre"}>
+          <Slink to="/genre">Genre</Slink>
+        </Item>
+        <Item current={pathname === "/tag"}>
+          <Slink to="/tag">Tag</Slink>
+        </Item>
+        <Item current={pathname === "/publisher"}>
+          <Slink to="/publisher">Publisher</Slink>
+        </Item>
+      </ul>
     </List>
   </Header>
 ));

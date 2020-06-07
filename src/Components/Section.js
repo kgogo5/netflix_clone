@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.section`
   margin: 0 auto;
   max-width: 1400px;
   padding: 10px;
