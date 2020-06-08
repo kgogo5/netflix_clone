@@ -143,7 +143,7 @@ const HomePresenter = ({
         publisherLists &&
         gameLists.length === 0 &&
         storeLists.length === 0 &&
-        platformLists.length == 0 &&
+        platformLists.length === 0 &&
         genreLists.length === 0 &&
         tagLists.length === 0 &&
         publisherLists === 0 && (

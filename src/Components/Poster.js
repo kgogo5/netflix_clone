@@ -132,7 +132,7 @@ const Poster = ({ id, bgURL, name, released, metacritic, infoURL, domain }) => (
         <Inner>
           <Link to={`/${infoURL}/${id}`} className="img_link" role="button">
             <Image
-              src={bgURL ? bgURL : require("../images/no_image.png")}
+              src={bgURL ? bgURL : require("images/no_image.png")}
               alt={`${name} images`}
             />
           </Link>

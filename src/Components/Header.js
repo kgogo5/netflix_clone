@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import Logo from "../images/logo.png";
 
 const Image = styled.img`
   max-width: 120px;
@@ -75,7 +74,7 @@ export default withRouter(({ location: { pathname } }) => (
   <Header>
     <Logos>
       <Link to="/" className="logo" role="button">
-        <Image src={Logo} alt={`STEAMFLIX Logo`} />
+        <Image src={require("images/logo.png")} alt={`STEAMFLIX Logo`} />
       </Link>
     </Logos>
     <List>
