@@ -171,6 +171,7 @@ const Poster = ({ id, bgURL, name, released, metacritic, infoURL, domain }) => (
 
 Poster.propTypes = {
   id: PropTypes.number.isRequired,
+  games: PropTypes.object,
   bgURL: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   released: PropTypes.string,

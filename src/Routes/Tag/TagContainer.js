@@ -10,22 +10,25 @@ export default class extends React.Component {
   };
 
   async componentDidMount() {
-    try {
-      const {
-        data: { results: tagLists },
-      } = await TagApi.tagLists();
-      this.setState({
-        tagLists,
+    const $this = this;
+    const loading = {
+      tagLists: false,
+      getLoading: function () {
+        if (this.tagLists) {
+          $this.setState({
+            loading: false,
+          });
+        }
+      },
+    };
+
+    TagApi.tagLists().then(function (res) {
+      loading.tagLists = true;
+      loading.getLoading();
+      $this.setState({
+        tagLists: res.data.results,
       });
-    } catch {
-      this.setState({
-        error: "Can't find tag information.",
-      });
-    } finally {
-      this.setState({
-        loading: false,
-      });
-    }
+    });
   }
 
   render() {

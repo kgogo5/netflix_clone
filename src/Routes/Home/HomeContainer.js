@@ -21,7 +21,7 @@ export default class extends React.Component {
     loading: true,
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     const $this = this;
     const loading = {
       gameLists: false,

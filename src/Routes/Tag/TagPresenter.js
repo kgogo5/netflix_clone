@@ -20,6 +20,7 @@ const TagPresenter = ({ tagLists, error, loading }) =>
               <Poster
                 key={tagLists.id}
                 id={tagLists.id}
+                games={tagLists.games}
                 bgURL={tagLists.image_background}
                 name={tagLists.name}
                 released={tagLists.released}
@@ -30,6 +31,7 @@ const TagPresenter = ({ tagLists, error, loading }) =>
           </ul>
         </Section>
       )}
+
       {error && <Message color="#e74c3c" text={error} />}
     </Container>
   );
