@@ -11,7 +11,7 @@ const Footer = styled.footer`
   padding: 50px 30px;
   background-color: rgba(0, 0, 0, 0.8);
 
-  @media (max-width: 1042px) {
+  @media (max-width: 1080px) {
     display: block;
     justify-content: unset;
     text-align: center;
@@ -46,7 +46,7 @@ const Inner = styled.section`
   & + & {
     border-left: 1px solid #212121;
 
-    @media (max-width: 1042px) {
+    @media (max-width: 1080px) {
       border-top: 1px solid #212121;
       border-left: 0;
     }
@@ -88,7 +88,7 @@ const Inner = styled.section`
     }
   }
 
-  @media (max-width: 1042px) {
+  @media (max-width: 1080px) {
     margin: 0 auto;
     width: 60%;
     padding: 30px 0;

@@ -30,7 +30,7 @@ const Container = styled.div`
       display: grid;
       grid-template-columns: repeat(4, 1fr);
 
-      @media (max-width: 1042px) {
+      @media (max-width: 1080px) {
         grid-template-columns: repeat(3, 1fr);
       }
 
@@ -83,14 +83,14 @@ const PageContent = styled.div`
   margin-top: 20px;
   background-color: rgba(0, 0, 0, 0.6);
 
-  @media (max-width: 1040px) {
+  @media (max-width: 1080px) {
     display: block;
   }
 
   .img_area {
     width: calc(100% - 300px);
 
-    @media (max-width: 1040px) {
+    @media (max-width: 1080px) {
       width: 100%;
     }
   }
@@ -99,7 +99,7 @@ const PageContent = styled.div`
     padding: 15px 20px;
     width: 300px;
 
-    @media (max-width: 1040px) {
+    @media (max-width: 1080px) {
       width: 100%;
     }
 
@@ -107,7 +107,7 @@ const PageContent = styled.div`
       display: flex;
       justify-content: space-around;
 
-      @media (max-width: 1040px) {
+      @media (max-width: 1080px) {
         display: block;
       }
     }
@@ -209,7 +209,7 @@ const Store = styled.li`
       transition: 0.2s;
       z-index: 1;
 
-      @media (max-width: 1042px) {
+      @media (max-width: 1080px) {
         font-size: 16px;
       }
 

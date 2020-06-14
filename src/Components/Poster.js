@@ -47,7 +47,7 @@ const Inner = styled.div`
       height: 100%;
       background-color: rgba(0, 0, 0, 0.2);
     }
-    @media (max-width: 1042px) {
+    @media (max-width: 1080px) {
       min-height: 198px;
     }
     @media (max-width: 768px) {

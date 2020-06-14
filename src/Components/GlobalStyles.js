@@ -5,7 +5,7 @@ const globalStyles = createGlobalStyle`
     ${reset}
     #root {
         padding-bottom:198px;
-        @media (max-width:1042px){
+        @media (max-width:1080px){
             padding-bottom:450px;
         }
         @media (max-width:768px){
