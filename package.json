@@ -28,7 +28,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://kgogo5.github.io/netflix_clone",
+  "homepage": "https://wonderful-mirzakhani-67fb23.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",
