@@ -319,7 +319,7 @@ const DetailPresenter = ({ result, error, loading }) => (
             </div>
           </Title>
 
-          {window.location.pathname.split("/")[1] === "game" ? (
+          {window.location.hash.includes("game") ? (
             <PageContent>
               <div className="img_area">
                 <ContentImage
