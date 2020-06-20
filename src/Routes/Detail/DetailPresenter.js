@@ -57,6 +57,10 @@ const Title = styled.div`
     display: inline-block;
     font-size: 28px;
     font-weight: 500;
+
+    @media (max-width: 1080px) {
+      font-size: 20px;
+    }
   }
 
   .genresList {
@@ -96,7 +100,7 @@ const PageContent = styled.div`
   }
 
   .contentArea {
-    padding: 15px 20px;
+    padding: 25px 20px;
     width: 300px;
 
     @media (max-width: 1080px) {
@@ -151,6 +155,10 @@ const Description = styled.p`
   font-size: 18px;
   line-height: 1.6;
   background-color: rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 1080px) {
+    font-size: 15px;
+  }
 `;
 
 const Video = styled.video`
@@ -234,6 +242,10 @@ const StoreLink = styled.a`
 const Metacritic = styled.img`
   max-width: 160px;
   width: 100%;
+
+  @media (max-width: 640px) {
+    max-width: 120px;
+  }
 `;
 
 const Score = styled.span`
@@ -255,6 +267,10 @@ const Score = styled.span`
       }
     }
   }};
+
+  @media (max-width: 640px) {
+    font-size: 18px;
+  }
 `;
 
 const ContentImage = styled.img`
@@ -302,8 +318,8 @@ const DetailPresenter = ({ result, error, loading }) => (
           </Helmet>
           <Breadcrumb>
             <Link to="/">Home</Link> &gt;{" "}
-            <Link to={`/${window.location.pathname.split("/")[1]}`}>
-              {window.location.pathname.split("/")[1]}
+            <Link to={`/${window.location.hash.split("/")[1]}`}>
+              {window.location.hash.split("/")[1]}
             </Link>
             <CurrentPath> &gt; {result.slug}</CurrentPath>
           </Breadcrumb>

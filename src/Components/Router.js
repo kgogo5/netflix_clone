@@ -11,7 +11,6 @@ import Game from "Routes/Game";
 import Store from "Routes/Store";
 import Platform from "Routes/Platform";
 import Genre from "Routes/Genre";
-import Tag from "Routes/Tag";
 import Publisher from "Routes/Publisher";
 import Footer from "Components/Footer";
 import Detail from "Routes/Detail";
@@ -27,12 +26,10 @@ export default () => (
         <Route path="/store" exact component={Store} />
         <Route path="/platform" exact component={Platform} />
         <Route path="/genre" exact component={Genre} />
-        <Route path="/tag" exact component={Tag} />
         <Route path="/publisher" exact component={Publisher} />
         <Route path="/game/:id" component={Detail} />
         <Route path="/platform/:id" component={Detail} />
         <Route path="/genre/:id" component={Detail} />
-        <Route path="/tag/:id" component={Detail} />
         <Route path="/store/:id" component={Detail} />
         <Route path="/publisher/:id" component={Detail} />
         <Redirect from="*" to="/" />

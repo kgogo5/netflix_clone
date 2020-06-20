@@ -1,13 +1,6 @@
 import React from "react";
 import HomePresenter from "./HomePresenter";
-import {
-  GamesApi,
-  PlatformsApi,
-  GenresApi,
-  TagApi,
-  StoreApi,
-  PublisherApi,
-} from "api";
+import { GamesApi, PlatformsApi, GenresApi, StoreApi, PublisherApi } from "api";
 
 export default class extends React.Component {
   state = {
@@ -15,7 +8,6 @@ export default class extends React.Component {
     storeLists: null,
     platformLists: null,
     genreLists: null,
-    tagLists: null,
     publisherLists: null,
     error: null,
     loading: true,
@@ -28,7 +20,6 @@ export default class extends React.Component {
       storeLists: false,
       platformLists: false,
       genreLists: false,
-      tagLists: false,
       publisherLists: false,
       getLoading: function () {
         if (
@@ -36,7 +27,6 @@ export default class extends React.Component {
           this.storeLists *
           this.platformLists *
           this.genreLists *
-          this.tagLists *
           this.publisherLists
         ) {
           $this.setState({
@@ -77,14 +67,6 @@ export default class extends React.Component {
       });
     });
 
-    TagApi.tagLists().then(function (res) {
-      loading.tagLists = true;
-      loading.getLoading();
-      $this.setState({
-        tagLists: res.data.results,
-      });
-    });
-
     PublisherApi.publisherLists().then(function (res) {
       loading.publisherLists = true;
       loading.getLoading();
@@ -100,7 +82,6 @@ export default class extends React.Component {
       storeLists,
       platformLists,
       genreLists,
-      tagLists,
       publisherLists,
       error,
       loading,
@@ -112,7 +93,6 @@ export default class extends React.Component {
         storeLists={storeLists}
         platformLists={platformLists}
         genreLists={genreLists}
-        tagLists={tagLists}
         publisherLists={publisherLists}
         error={error}
         loading={loading}

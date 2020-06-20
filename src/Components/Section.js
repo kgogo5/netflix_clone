@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Container = styled.section`
   margin: 0 auto;
   max-width: 1400px;
-  padding: 10px;
+  padding: 30px 20px 50px;
   :not(:last-child) {
     margin-bottom: 50px;
   }
@@ -18,7 +18,7 @@ const Title = styled.span`
 `;
 
 const Grid = styled.div`
-  margin: 25px 0 50px;
+  margin: 25px 0 0;
 
   & > ul {
     display: grid;

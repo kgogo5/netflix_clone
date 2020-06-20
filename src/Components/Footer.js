@@ -118,7 +118,6 @@ export default withRouter(() => (
           <Slink to="/store">Store</Slink>
           <Slink to="/platform">Platform</Slink>
           <Slink to="/genre">Genre</Slink>
-          <Slink to="/tag">Tag</Slink>
           <Slink to="/publisher">Publisher</Slink>
         </nav>
       </Inner>

@@ -94,9 +94,6 @@ export default withRouter(({ location: { pathname } }) => (
         <Item current={pathname === "/genre"}>
           <Slink to="/genre">Genre</Slink>
         </Item>
-        <Item current={pathname === "/tag"}>
-          <Slink to="/tag">Tag</Slink>
-        </Item>
         <Item current={pathname === "/publisher"}>
           <Slink to="/publisher">Publisher</Slink>
         </Item>

@@ -14,7 +14,6 @@ const HomePresenter = ({
   storeLists,
   platformLists,
   genreLists,
-  tagLists,
   publisherLists,
   error,
   loading,
@@ -105,24 +104,6 @@ const HomePresenter = ({
         </Container>
 
         <Container>
-          {tagLists && tagLists.length > 0 && (
-            <Section title="Tags List">
-              <ul>
-                {tagLists.map((tagLists) => (
-                  <Poster
-                    key={tagLists.id}
-                    id={tagLists.id}
-                    bgURL={tagLists.image_background}
-                    name={tagLists.name}
-                    infoURL={"tag"}
-                  />
-                ))}
-              </ul>
-            </Section>
-          )}
-        </Container>
-
-        <Container>
           {publisherLists && publisherLists.length > 0 && (
             <Section title="Publishers List">
               <ul>
@@ -146,13 +127,11 @@ const HomePresenter = ({
           storeLists &&
           platformLists &&
           genreLists &&
-          tagLists &&
           publisherLists &&
           gameLists.length === 0 &&
           storeLists.length === 0 &&
           platformLists.length === 0 &&
           genreLists.length === 0 &&
-          tagLists.length === 0 &&
           publisherLists === 0 && (
             <Message text="Nothing found" color="#95a5a6" />
           )}
@@ -166,7 +145,6 @@ HomePresenter.propTypes = {
   storeLists: PropTypes.array,
   platformLists: PropTypes.array,
   genreLists: PropTypes.array,
-  tagLists: PropTypes.array,
   publisherLists: PropTypes.array,
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
