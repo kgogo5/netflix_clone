@@ -20,3 +20,5 @@ Learning React and ES6 by building a Movie Discovery App.
 - Store details
 - Publisher lists
 - Publisher details
+
+https://rapidapi.com/accujazz/api/rawg-video-games-database/
