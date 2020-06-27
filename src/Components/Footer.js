@@ -105,8 +105,9 @@ export default withRouter(() => (
           </Slink>
         </h2>
         <p>
-          It is made of React, ES6, AJAX, RAWG Video Games Database API, styled
-          component, React Router, React Context, Axios.
+          It is made of React, ES6, Yarn, AJAX, RAWG Video Games Database API,
+          styled component, React Router, react helmet, prop-types, gh-pages,
+          styled reset Axios.
         </p>
       </Inner>
       <Inner>
