@@ -413,7 +413,7 @@ const DetailPresenter = ({ result, error, loading }) => (
               <ul>
                 <Store key={result.id}>
                   <StoreLink
-                    href={result.domain}
+                    href={`https://${result.domain}`}
                     bg={result.image_background}
                     target="_blank"
                   >
