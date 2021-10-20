@@ -38,14 +38,8 @@ export default class extends React.Component {
       history: { push },
     } = this.props;
 
-    const {
-      isGame,
-      isPlatform,
-      isGenre,
-      isTag,
-      isStore,
-      isPublisher,
-    } = this.state;
+    const { isGame, isPlatform, isGenre, isTag, isStore, isPublisher } =
+      this.state;
 
     const parsedId = parseInt(id);
     if (isNaN(parsedId)) {
