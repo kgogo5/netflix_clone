@@ -314,20 +314,20 @@ const DetailPresenter = ({ result, error, loading }) => (
       <>
         <Container>
           <Helmet>
-            <title>{result.name} | STEAMFLIX</title>
+            <title>{result && result.name} | STEAMFLIX</title>
           </Helmet>
           <Breadcrumb>
             <Link to="/">Home</Link> &gt;{" "}
             <Link to={`/${window.location.hash.split("/")[1]}`}>
               {window.location.hash.split("/")[1]}
             </Link>
-            <CurrentPath> &gt; {result.slug}</CurrentPath>
+            <CurrentPath> &gt; {result && result.slug}</CurrentPath>
           </Breadcrumb>
 
           <Title>
-            <h1>{result.name}</h1>
+            <h1>{result && result && result.name}</h1>
             <div className="genresList">
-              {result.genres
+              {result && result.genres
                 ? result.genres.map((genres) => (
                     <span key={genres.id}>{genres.name}</span>
                   ))
@@ -339,115 +339,125 @@ const DetailPresenter = ({ result, error, loading }) => (
             <PageContent>
               <div className="img_area">
                 <ContentImage
-                  src={result.background_image}
-                  alt={`${result.name} main images`}
+                  src={result && result.background_image}
+                  alt={`${result && result.name} main images`}
                 />
               </div>
               <div className="contentArea">
-                {result.metacritic ? (
+                {result && result.metacritic ? (
                   <div className="metacrinic">
                     <Metacritic src={require("images/Metacritic_black.png")} />{" "}
-                    <Score color={result.metacritic}>{result.metacritic}</Score>
+                    <Score color={result && result.metacritic}>
+                      {result && result.metacritic}
+                    </Score>
                   </div>
                 ) : null}
 
-                {result.developers ? (
+                {result && result.developers ? (
                   <div className="developer">
                     <strong>Developers</strong> :{" "}
                     <span>
-                      {result.developers.map((dev) => dev.name).join(`, `)}
+                      {result &&
+                        result.developers.map((dev) => dev.name).join(`, `)}
                     </span>
                   </div>
                 ) : null}
 
-                {result.publishers ? (
+                {result && result.publishers ? (
                   <div className="publishers">
                     <strong>Publishers</strong> :{" "}
                     <span>
-                      {result.publishers.map((pub) => pub.name).join(`, `)}
+                      {result &&
+                        result.publishers.map((pub) => pub.name).join(`, `)}
                     </span>
                   </div>
                 ) : null}
 
-                {result.playtime ? (
+                {result && result.playtime ? (
                   <div className="playtime">
                     <strong>Playtime</strong> :{" "}
                     <span>{result.playtime} Hours</span>
                   </div>
                 ) : null}
 
-                {result.parent_platforms ? (
+                {result && result.parent_platforms ? (
                   <div className="parent_platforms">
                     <strong>Platforms</strong> :{" "}
                     <span>
-                      {result.parent_platforms
-                        .map((plat) => plat.platform.name)
-                        .join(`, `)}
+                      {result &&
+                        result.parent_platforms
+                          .map((plat) => plat.platform.name)
+                          .join(`, `)}
                     </span>
                   </div>
                 ) : null}
 
-                {result.tags ? (
+                {result && result.tags ? (
                   <div className="tag">
                     <strong>Tags</strong> :{" "}
-                    {result.tags.map((tag) => (
-                      <span key={tag.id}>{tag.name}</span>
-                    ))}
+                    {result &&
+                      result.tags.map((tag) => (
+                        <span key={tag.id}>{tag.name}</span>
+                      ))}
                   </div>
                 ) : null}
               </div>
             </PageContent>
           ) : null}
 
-          {result.description ? (
+          {result && result.description ? (
             <Description
-              dangerouslySetInnerHTML={{ __html: result.description }}
+              dangerouslySetInnerHTML={{ __html: result && result.description }}
             ></Description>
           ) : (
             <Description>No information is available.</Description>
           )}
 
-          {result.domain ? (
+          {result && result.domain ? (
             <div className="storeArea store">
               <h2>STORE</h2>
               <ul>
-                <Store key={result.id}>
+                <Store key={result && result.id}>
                   <StoreLink
-                    href={`https://${result.domain}`}
-                    bg={result.image_background}
+                    href={`https://${result && result.domain}`}
+                    bg={result && result.image_background}
                     target="_blank"
                   >
-                    <span>{result.name}</span>
+                    <span>{result && result.name}</span>
                   </StoreLink>
                 </Store>
               </ul>
             </div>
           ) : null}
 
-          {result.clip ? (
+          {result && result.clip ? (
             <div className="videoArea">
               <h2>VIDEO</h2>
               <Video controls>
-                <source src={result.clip.clips.full} type="video/mp4" />
+                <source
+                  src={result && result.clip.clips.full}
+                  type="video/mp4"
+                />
               </Video>
             </div>
           ) : null}
 
-          {result.stores ? (
+          {result && result.stores ? (
             <div className="storeArea">
               <h2>STORES</h2>
               <ul>
-                {result.stores.map((stores) => (
-                  <Store key={stores.id}>
-                    <StoreLink
-                      href={stores.url}
-                      bg={stores.store.image_background}
-                      target="_blank"
-                    >
-                      <span>{stores.store.name}</span>
-                    </StoreLink>
-                  </Store>
-                ))}
+                {result &&
+                  result.stores.map((stores) => (
+                    <Store key={stores.id}>
+                      <StoreLink
+                        href={`https://${stores && stores.store.domain}`}
+                        bg={stores.store.image_background}
+                        target="_blank"
+                      >
+                        <span>{stores.store.name}</span>
+                      </StoreLink>
+                    </Store>
+                  ))}
               </ul>
             </div>
           ) : null}
@@ -456,7 +466,7 @@ const DetailPresenter = ({ result, error, loading }) => (
         </Container>
         <Backdrop
           bgImage={
-            result.background_image_additional
+            result && result.background_image_additional
               ? result.background_image_additional
               : result.image_background
           }

@@ -1,40 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import StorePresenter from "./StorePresenter";
 import { StoreApi } from "api";
 
-export default class extends React.Component {
-  state = {
-    storeLists: null,
-    error: null,
-    loading: true,
-  };
-
-  async componentDidMount() {
+const _ = () => {
+  const [storeLists, setStoreLists] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  async function getStoreLists() {
     try {
-      const {
-        data: { results: storeLists },
-      } = await StoreApi.storeLists();
-      this.setState({
-        storeLists,
-      });
-    } catch {
-      //작동하지 않을 때 catch부분에서 처리가 된다.
-      this.setState({
-        error: "Can't find store information.",
-      });
-    } finally {
-      //끝나게 되면 작동
-      this.setState({
-        loading: false,
-      });
+      const { data } = await StoreApi.storeLists();
+      console.log(data);
+      setStoreLists(data.results);
+      setLoading(false);
+    } catch (error) {
+      setError(error);
     }
   }
+  useEffect(() => {
+    getStoreLists();
+  }, []);
 
-  render() {
-    const { storeLists, error, loading } = this.state;
-    console.log(this.state);
-    return (
+  return (
+    <>
       <StorePresenter storeLists={storeLists} error={error} loading={loading} />
-    );
-  }
-}
+    </>
+  );
+};
+export default _;
