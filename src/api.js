@@ -5,7 +5,6 @@ const api = axios.create({
   headers: {
     // "content-type": "application/octet-stream",
     // "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
-    dates: "2021-10-21,2021-11-21",
     key: "4c320f20d4584965ba9e95d8a507f2e3",
   },
   baseURL: "https://api.rawg.io/api/",
