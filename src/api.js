@@ -3,11 +3,12 @@ import axios from "axios";
 const api = axios.create({
   method: "GET",
   headers: {
-    "content-type": "application/octet-stream",
-    "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
-    "x-rapidapi-key": "4c320f20d4584965ba9e95d8a507f2e3",
+    // "content-type": "application/octet-stream",
+    // "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
+    dates: "2021-10-21,2021-11-21",
+    key: "4c320f20d4584965ba9e95d8a507f2e3",
   },
-  baseURL: "https://rawg-video-games-database.p.rapidapi.com/",
+  baseURL: "https://api.rawg.io/api/",
 });
 
 export const GamesApi = {
