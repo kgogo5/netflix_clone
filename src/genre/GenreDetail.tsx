@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Detail } from "../component/Detail";
+import { Detail } from "../components/Detail";
 import axios from "axios";
 import { apiKey, apiUrl } from "../common/common";
 import { useParams } from "react-router-dom";
