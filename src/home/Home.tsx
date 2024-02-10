@@ -1,9 +1,9 @@
 import axios from "axios";
-import Card, { ICard } from "../components/Card";
-import Section from "../components/Section";
+import Card, { ICard } from "../component/Card";
+import Section from "../component/Section";
 import { apiKey, apiUrl } from "../common/common";
 import { useQuery } from "@tanstack/react-query";
-import { Skeleton } from "../components/Skeleton";
+import { Skeleton } from "../component/Skeleton";
 import { memo } from "react";
 
 export default function HomeComponent() {
