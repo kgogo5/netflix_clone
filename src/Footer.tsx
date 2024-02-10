@@ -20,8 +20,6 @@ const Wrap = styled.footer`
   }
 `;
 
-const Image = styled.img``;
-
 const Slink = styled(Link)`
   display: inline-block;
   color: #fff;
@@ -119,7 +117,7 @@ export default function Footer() {
         <Inner>
           <h2>
             <Slink to="/">
-              <Image src="images/logo.png" alt={`STEAMFLIX Logo`} />
+              <img src="images/logo.png" alt="STEAMFLIX Logo" />
             </Slink>
           </h2>
           <p>
@@ -150,7 +148,7 @@ export default function Footer() {
                 role="button"
                 rel="noopener noreferrer"
               >
-                <img src="images/instagram_icon.svg" />
+                <img src="images/instagram_icon.svg" alt="instagram icon" />
               </a>
             </li>
             <li>
@@ -161,7 +159,7 @@ export default function Footer() {
                 role="button"
                 rel="noopener noreferrer"
               >
-                <img src="images/github_icon.svg" />
+                <img src="images/github_icon.svg" alt="github icon" />
               </a>
             </li>
           </SocialList>
